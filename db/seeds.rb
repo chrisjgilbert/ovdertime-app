@@ -5,6 +5,7 @@
   first_name: 'Jon',
   last_name: 'Doe'
 )
+puts 'Creating user...'
 
 100.times do |post|
   Post.create(
