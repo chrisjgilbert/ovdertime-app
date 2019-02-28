@@ -1,16 +1,12 @@
 FactoryBot.define do
-  factory :user do
-    first_name { 'Jon' }
-    last_name {' Snow' }
-    email { 'test@test.com' }
-    password { 'asdfasdf' }
-    password_confirmation { 'asdfasdf' }
+  sequence :email do |n|
+    "test#{n}@email.com"
   end
 
-  factory :second_user, class: 'User' do
-    first_name { 'Tiffany' }
-    last_name { 'Hudgens' }
-    email { 'asdf@asdf.com' }
+  factory :user do
+    first_name { 'Jon' }
+    last_name { 'Snow' }
+    email { generate :email }
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
   end
@@ -18,7 +14,7 @@ FactoryBot.define do
   factory :admin_user, class: 'AdminUser' do
     first_name { 'Admin' }
     last_name { 'User' }
-    email { 'admin@user.com' }
+    email { generate :email }
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
   end
