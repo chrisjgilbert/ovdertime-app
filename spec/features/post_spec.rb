@@ -18,8 +18,8 @@ describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      FactoryBot.create(:post)
-      FactoryBot.create(:second_post)
+      FactoryBot.build(:post)
+      FactoryBot.build(:second_post)
       visit posts_path
       expect(page).to have_content(/Rationale|Post2/)
     end
