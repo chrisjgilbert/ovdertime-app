@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to @post, notice: 'Your post was created succesfully'
+      redirect_to posts_path, notice: 'Your post was created succesfully'
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Your post was updated successfully'
+      redirect_to posts_path, notice: 'Your post was updated successfully'
     else
       render 'edit'
     end
