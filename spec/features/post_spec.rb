@@ -77,7 +77,6 @@ describe 'navigate' do
 
     it 'can be be edited' do
       visit edit_post_path(@post)
-
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'Edited content'
       click_on 'save'
